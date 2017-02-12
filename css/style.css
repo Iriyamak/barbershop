@@ -59,8 +59,13 @@ html {
 		color: #000;
 		background: #fff;
 		text-align: left;
-		font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
 		min-height: 100%;
+		font-family: 'PT Sans Narrow', sans-serif;
+		font-size: 14px;
+		line-height: 24px;
+		active-line-color:#aba9a7;
+		active-description-color:#aeaeae;
+		chexbox-hover-color:#663d15;
 	}
 	a, a:visited { /* порядок правил для ссылок имеет значение */
 		color: blue;
@@ -82,3 +87,22 @@ html {
 		margin: 0 auto;
 	}
 /* --------------- базовые настройки ---------*/
+h1{
+	font-size: 48px;
+	line-height: 48px;
+}
+h2{
+	font-size: 30px;
+	line-height: 42px;
+}
+h3{
+	font-size: 24px;
+	line-height: 30px;
+}
+.menu {
+	font-size: 16px;
+	line-height: 20px;
+}
+shop text{
+	line-height: 18px;
+}
