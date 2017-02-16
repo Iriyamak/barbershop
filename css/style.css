@@ -48,7 +48,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display:block;
 	}
-	nav ul {
+	ul {
 		 list-style:none;
 	}
 /* --------------- базовые настройки ---------*/
@@ -63,21 +63,15 @@ html {
 		font-family: 'PT Sans Narrow', sans-serif;
 		font-size: 14px;
 		line-height: 24px;
-		active-line-color:#aba9a7;
-		active-description-color:#aeaeae;
-		chexbox-hover-color:#663d15;
+		text-transform: uppercase;
 	}
 	a, a:visited { /* порядок правил для ссылок имеет значение */
-		color: blue;
 		text-decoration: none;
+		color: #000;
 	}
 	a:hover {
-		color: green;
-		text-decoration: none;
 	}
 	a:focus, a:active {
-		color: orange;
-		text-decoration: none;
 	}
 	img{
 		max-width:100%;
@@ -91,7 +85,7 @@ h1{
 	font-size: 48px;
 	line-height: 48px;
 }
-h2{
+h2, b{
 	font-size: 30px;
 	line-height: 42px;
 }
@@ -99,10 +93,38 @@ h3{
 	font-size: 24px;
 	line-height: 30px;
 }
-.menu {
+.main-header a{
 	font-size: 16px;
 	line-height: 20px;
 }
 shop text{
 	line-height: 18px;
+}
+header{
+	background-color: #000;
+}
+.features{
+	color: #fff;
+}
+.news-preview time{
+	color:#aba9a7;
+}
+header,
+footer{
+	color: #fff;
+}
+.deactive{
+	color:#aba9a7;
+}
+.components {
+	list-style-image: url(../img/item/feature-icon.png);
+}
+.btn{
+	color: #fff;
+	background-color: #000;
+	font-size: 14px;
+	line-height: 18px;
+}
+.btn:hover{
+	background-color: #663d15;
 }
