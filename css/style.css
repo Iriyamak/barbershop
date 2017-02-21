@@ -8,7 +8,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, 
 	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
 	font-size: 100%;                     /* размер шрифта всем одинаковый */
 }
-	a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	a {      /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
 		margin:0;
 		padding:0;
 		font-size:100%;
@@ -67,7 +67,6 @@ html {
 	}
 	a, a:visited { /* порядок правил для ссылок имеет значение */
 		text-decoration: none;
-		color: #000;
 	}
 	a:hover {
 	}
@@ -77,54 +76,122 @@ html {
 		max-width:100%;
 	}
 	.centerfix{
-		max-width: 1170px;
+		max-width: 940px;
+		padding: 0 10px;
 		margin: 0 auto;
 	}
-/* --------------- базовые настройки ---------*/
-h1{
-	font-size: 48px;
-	line-height: 48px;
-}
-h2, b{
-	font-size: 30px;
-	line-height: 42px;
-}
-h3{
-	font-size: 24px;
-	line-height: 30px;
-}
-.main-header a{
-	font-size: 16px;
-	line-height: 20px;
-}
-shop text{
-	line-height: 18px;
-}
-header{
+/* --------------- index ---------*/
+.main-header{
 	background-color: #000;
+	margin-bottom: 60px;
 }
-.features{
-	color: #fff;
+	.main-header .centerfix{
+		display: flex;
+		justify-content: space-between;
+	}
+main{}
+	.index-logo{
+		margin: 0 auto;
+		width: 39%;
+		margin-bottom: 25px;
+	}
+	.features{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 80px;
+	}
+		.feature-item{
+			width: 32%;
+		}
+	.index-content{
+		display: flex;
+		justify-content: space-between;
+		padding: 50px 80px;
+		margin-bottom: 30px;
+	}
+		.index-content-left{
+			width: 40%;
+		}
+		.index-content-right{
+			width: 32%;
+		}
+	.paginator{
+	   width: 280px;
+	   margin: 30px auto;
+	   padding: 10px;
+	   white-space: nowrap;
+	   background: #ecf0f1;
+	}
+		.paginator a {
+	    display: inline-block;
+	    min-width: 20px;
+	    height: 40px;
+	    padding: 0 10px;
+	    line-height: 40px;
+	    text-align: center;
+	    vertical-align: middle;
+	    text-decoration: none;
+	    font-weight: bold;
+	    color: #fff;
+	    background: #000;
+		}
+		.paginator .current {
+    	background-color: blue;
+		}
+		.paginator a:hover {
+    	background-color: red;
+		}
+.main-footer .centerfix{
+	margin-top: 45px;
+	display: flex;
+	justify-content: space-between;
 }
-.news-preview time{
-	color:#aba9a7;
+	.footer-contats{
+		width: 34%;
+	}
+	.footer-social{
+		width: 19%;
+	}
+	.footer-copyright{
+		width: 38%;
+	}
+
+/* --------------- item ---------*/
+.description{
+	display: flex;
+	justify-content: space-between;
 }
-header,
-footer{
-	color: #fff;
+	.description-photo{
+		width: 48%;
+	}
+	.description-text{
+		width: 41%;
+	}
+/* --------------- price ---------*/
+.about-and-price-list{
+	display: flex;
+	justify-content: space-between;
 }
-.deactive{
-	color:#aba9a7;
+	.about{
+		width: 41%;
+	}
+	.price-list{
+		width: 49%;
+	}
+	/* --------------- shop ---------*/
+.catalog{
+display: flex;
+justify-content: space-between;
 }
-.components {
-	list-style-image: url(../img/item/feature-icon.png);
-}
-.btn{
-	color: #fff;
-	background-color: #000;
-	font-size: 14px;
-	line-height: 18px;
-}
-.btn:hover{
-	background-color: #663d15;
-}
+	aside{
+		width: 23.4%;
+	}
+	.catalog section{
+		width: 74.5%;
+	}
+		.item{
+		display: inline-block;
+		}
+		.item span{
+		display: block;
+		}
