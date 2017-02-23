@@ -141,6 +141,9 @@ main{}
 		.paginator a:hover {
     	background-color: red;
 		}
+		.paginator .current:hover{
+		background-color: blue;
+		}
 .main-footer .centerfix{
 	margin-top: 45px;
 	display: flex;
