@@ -1,168 +1,325 @@
-/* --------------- reset.css --------------- */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;                               /* обнуляем отступы и убираем бордюры */
-	vertical-align: baseline;          /* приводим все к одной базовой линии */
-	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
-	font-size: 100%;                     /* размер шрифта всем одинаковый */
-}
-	a {      /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
-		margin:0;
-		padding:0;
-		font-size:100%;
-		vertical-align:baseline;
-		background:transparent;
-		outline:none;
-	}
-	table {						/* устраняем отступы между ячейками таблицы */
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
-	td, td img {
-		vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
-	}
-	input, select, button, textarea {
-		margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
-		font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
-		outline: none;
-	}
-	input[type="text"], input[type="password"], textarea {
-		padding: 0; 				/* убираем внутренние отступы для текстовых полей */
-	}
-	input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
-		vertical-align: bottom;
-	}
-	input[type="radio"] {
-		vertical-align: text-bottom;
-	}
-	sub {
-		vertical-align: sub;
-		font-size: smaller;
-	}
-	sup {
-		vertical-align: super;
-		font-size: smaller;
-	}
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display:block;
-	}
-	ul {
-		 list-style:none;
-	}
 /* --------------- базовые настройки ---------*/
 html {
 	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
 }
 	body {
-		color: #000;
-		background: #fff;
-		text-align: left;
+		margin: 0;
+		padding: 0;
+		color: #fff;
 		min-height: 100%;
-		font-family: 'PT Sans Narrow', sans-serif;
+		font-family: 'PT Sans Narrow', "Arial", sans-serif;
+		font-weight: 700;
 		font-size: 14px;
 		line-height: 24px;
 		text-transform: uppercase;
+		background: #000 url("../img/bg.jpg") no-repeat center top;
 	}
 	a, a:visited { /* порядок правил для ссылок имеет значение */
 		text-decoration: none;
-	}
-	a:hover {
-	}
-	a:focus, a:active {
+		cursor: pointer;
+		border-bottom: 1px solid #242424;
 	}
 	img{
-		max-width:100%;
+		max-width: 100%;
 	}
 	.centerfix{
 		max-width: 940px;
 		padding: 0 10px;
 		margin: 0 auto;
 	}
-/* --------------- index ---------*/
 .main-header{
 	background-color: #000;
+	color: #fff;
 	margin-bottom: 60px;
+	font-size: 16px;
+	line-height: 20px;
+	vertical-align: top;
 }
-	.main-header .centerfix{
-		display: flex;
-		justify-content: space-between;
+	.main-header a{
+		color: inherit;
+		padding: 25px 20px;
 	}
-main{}
+	.main-header a:hover{
+		background: #242424;
+	}
+	.main-header .centerfix{
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+	.main-header .centerfix *{
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+		.main-navigation ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+		}
+	.main-header .login{
+		position: relative;
+		padding-left: 50px;
+		display: inline-block;
+	}
+	.login::before {
+		content: "";
+		position: absolute;
+		top: 28px;
+		left: 20px;
+		width: 18px;
+		height: 18px;
+		background: transparent url("../img/sprite.png") no-repeat;
+		background-position: -10px -10px;
+		opacity: 0.3;
+	}
+	.login:hover::before {
+	  opacity: 1;
+	}
+main a{
+	color: #000;
+}
 	.index-logo{
 		margin: 0 auto;
 		width: 39%;
-		margin-bottom: 25px;
+		margin-bottom: 50px;
 	}
 	.features{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 		margin-bottom: 80px;
 	}
-		.feature-item{
-			width: 32%;
+		.features-item{
+			width: 29%;
+			text-align: center;
 		}
+			.features-name{
+			position: relative;
+			display: block;
+		  padding-bottom: 35px;
+			margin-bottom: 30px;
+		  font-size: 30px;
+		  line-height: 42px;
+			}
+			.features-name::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				display: block;
+				width: 20px;
+				height: 20px;
+				margin-left: -10px;
+				background-color: #ffffff;
+				-webkit-transform: rotate(45deg);
+								transform: rotate(45deg);
+			}
 	.index-content{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 		padding: 50px 80px;
-		margin-bottom: 30px;
+		margin-bottom: 35px;
+		color: #000;
+		background: url("../img/column-separate.jpg") no-repeat center,
+		#f8f5f2 url("../img/bg-pattern.jpg");
 	}
 		.index-content-left{
-			width: 40%;
+			width: 48.7%;
 		}
 		.index-content-right{
-			width: 32%;
+			width: 38.5%;
 		}
-	.paginator{
-	   width: 280px;
-	   margin: 30px auto;
-	   padding: 10px;
-	   white-space: nowrap;
-	   background: #ecf0f1;
+			.index-content-title {
+				margin: 0;
+				margin-bottom: 25px;
+				font-size: 30px;
+				line-height: 42px;
+			}
+			.news-preview {
+			  margin: 0;
+			  padding: 0;
+			  list-style: none;
+			}
+				.news-preview li {
+				  margin-bottom: 25px;
+				}
+				.news-preview p{
+					margin: 0;
+				}
+				.news-preview time {
+				  text-transform: none;
+				}
+	.btn{
+		display: inline-block;
+		padding: 10px 33px;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 24px;
+		font-family: "PT Sans Narrow", "Arial", sans-serif;
+		vertical-align: top;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+		text-decoration: none;
+		background-color: #000000;
+		border: none;
+		outline: none;
+		cursor: pointer;
 	}
-		.paginator a {
-	    display: inline-block;
-	    min-width: 20px;
-	    height: 40px;
-	    padding: 0 10px;
-	    line-height: 40px;
-	    text-align: center;
-	    vertical-align: middle;
-	    text-decoration: none;
-	    font-weight: bold;
-	    color: #fff;
-	    background: #000;
+		.btn:hover,
+		.btn:active {
+		  background-color: #663d15;
 		}
-		.paginator .current {
-    	background-color: blue;
+		.btn.disabled,
+		.btn:disabled {
+		  cursor: default;
+		  opacity: 0.5;
 		}
-		.paginator a:hover {
-    	background-color: red;
+		.btn.disabled:hover,
+		.btn:disabled:hover {
+		  background-color: #000000;
 		}
-		.paginator .current:hover{
-		background-color: blue;
+	.gallery-content{
+		margin: 0;
+		background-color: #ccc;
+	  border: 7px solid #fff;
+		margin-bottom: 20px;
 		}
+			.gallery-content img{
+				display: block;
+			}
+			.btn-box{
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+			}
+				.btn-box .btn{
+					width: 46%;
+				}
+	.appointment-form input {
+				  float: left;
+				  width: 106px;
+				  margin-right: 20px;
+				  margin-bottom: 20px;
+				  padding: 7px 15px;
+				  font-size: 14px;
+				  line-height: 24px;
+				  font-family: "PT Sans Narrow", "Arial", sans-serif;
+				  color: #000000;
+				  text-transform: uppercase;
+				  background-color: #f9f6f3;
+				  border: 2px solid #000000;
+				  outline: none;
+	}
+
+				.appointment-form input:focus {
+				  border: 2px solid #663d15;
+				}
+
+				.appointment-form input:nth-child(2n) {
+				  margin-right: 0;
+				}
+
+				.appointment-form .btn {
+				  width: 100%;}
+
+.main-footer{
+	margin-top: 65px;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	color: #fff;
+	background: #252525 url("../img/pattern-black.jpg");
+}
+	.main-footer p a{
+		color: #fff;
+		border-bottom: 1px solid #fff;
+	}
 .main-footer .centerfix{
-	margin-top: 45px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
 	justify-content: space-between;
 }
-	.footer-contats{
-		width: 34%;
+	.footer-contacts{
+		width: 33%;
 	}
 	.footer-social{
-		width: 19%;
+		width: 33%;
+		text-align: center;
 	}
+		.social-btn {
+			display: inline-block;
+			width: 43px;
+			height: 43px;
+			margin: 0 2px;
+			font-size: 0;
+			vertical-align: top;
+			text-decoration: none;
+			background: #000000 url("../img/sprite.png") no-repeat center;
+			-webkit-transition:-webkit-filter 1s;
+			transition:-webkit-filter 1s;
+			transition:filter 1s;
+			transition: filter 1s, -webkit-filter 1s;
+		}
+			.social-btn:hover {
+				-webkit-filter: invert(100%);
+				        filter: invert(100%);
+			}
+				.social-btn-vk{
+					background-position: -10px -201px;
+				}
+				.social-btn-fb{
+					background-position: -10px -118px;
+				}
+				.social-btn-inst{
+					background-position: -10px -160px;
+				}
+			.sprite-social-icons {
+			    width: 58px;
+			    height: 44px;
+			    background-position: -10px -237px;
+			}
 	.footer-copyright{
-		width: 38%;
+		width: 33%;
+		text-align: center;
 	}
+		.footer-copyright .btn:hover {
+			color: #000000;
+			background-color: #ffffff;
+		}
+
+
+
+
+
 
 /* --------------- item ---------*/
 .description{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 	.description-photo{
 		width: 48%;
@@ -172,8 +329,12 @@ main{}
 	}
 /* --------------- price ---------*/
 .about-and-price-list{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 	.about{
 		width: 41%;
@@ -183,8 +344,12 @@ main{}
 	}
 	/* --------------- shop ---------*/
 .catalog{
+display: -webkit-box;
+display: -ms-flexbox;
 display: flex;
-justify-content: space-between;
+-webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
 }
 	aside{
 		width: 23.4%;
@@ -197,4 +362,34 @@ justify-content: space-between;
 		}
 		.item span{
 		display: block;
+		}
+		.paginator{
+		   width: 280px;
+		   margin: 30px auto;
+		   padding: 10px;
+		   white-space: nowrap;
+		   background: #ecf0f1;
+		}
+			.paginator a {
+		    display: inline-block;
+		    min-width: 20px;
+		    height: 40px;
+		    padding: 0 10px;
+		    line-height: 40px;
+		    text-align: center;
+		    vertical-align: middle;
+		    text-decoration: none;
+		    font-weight: bold;
+		    color: #fff;
+		    background: #000;
+			}
+			.paginator .current {
+	    	background-color: blue;
+			}
+			.paginator a:hover {
+	    	background-color: red;
+			}
+			.paginator .current:hover{
+				background-color: blue;
+			}
 		}
