@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "PTSansNarrowBold";
+    src: url("../fonts/PTSansNarrowBold/PTSansNarrowBold.eot");
+    src: url("../fonts/PTSansNarrowBold/PTSansNarrowBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PTSansNarrowBold/PTSansNarrowBold.woff") format("woff"),
+    url("../fonts/PTSansNarrowBold/PTSansNarrowBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
 /* --------------- базовые настройки ---------*/
 html {
 	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
@@ -7,8 +16,7 @@ html {
 		padding: 0;
 		color: #fff;
 		min-height: 100%;
-		font-family: 'PT Sans Narrow', "Arial", sans-serif;
-		font-weight: 700;
+		font-family: "PTSansNarrowBold", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 		font-size: 14px;
 		line-height: 24px;
 		text-transform: uppercase;
@@ -21,6 +29,7 @@ html {
 	}
 	img{
 		max-width: 100%;
+		height: auto;
 	}
 	.centerfix{
 		max-width: 940px;
@@ -39,9 +48,9 @@ html {
 		color: inherit;
 		padding: 25px 20px;
 	}
-	.main-header a:hover{
-		background: #242424;
-	}
+		.main-header a:hover{
+			background: #242424;
+		}
 	.main-header .centerfix{
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -49,6 +58,8 @@ html {
 		-webkit-box-pack: justify;
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 	}
 	.main-header .centerfix *{
 		display: -webkit-box;
@@ -62,26 +73,27 @@ html {
 			-webkit-box-pack: justify;
 			    -ms-flex-pack: justify;
 			        justify-content: space-between;
+			-ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
 		}
 	.main-header .login{
 		position: relative;
 		padding-left: 50px;
 		display: inline-block;
 	}
-	.login::before {
-		content: "";
-		position: absolute;
-		top: 28px;
-		left: 20px;
-		width: 18px;
-		height: 18px;
-		background: transparent url("../img/sprite.png") no-repeat;
-		background-position: -10px -10px;
-		opacity: 0.3;
-	}
-	.login:hover::before {
-	  opacity: 1;
-	}
+		.login::before {
+			content: "";
+			position: absolute;
+			top: 28px;
+			left: 20px;
+			width: 18px;
+			height: 18px;
+			background: transparent url("../img/enter-icon.png") no-repeat;
+			opacity: 0.3;
+		}
+		.login:hover::before {
+		  opacity: 1;
+		}
 main a{
 	color: #000;
 }
@@ -104,26 +116,26 @@ main a{
 			text-align: center;
 		}
 			.features-name{
-			position: relative;
-			display: block;
-		  padding-bottom: 35px;
-			margin-bottom: 30px;
-		  font-size: 30px;
-		  line-height: 42px;
-			}
-			.features-name::after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 50%;
+				position: relative;
 				display: block;
-				width: 20px;
-				height: 20px;
-				margin-left: -10px;
-				background-color: #ffffff;
-				-webkit-transform: rotate(45deg);
-								transform: rotate(45deg);
+			  padding-bottom: 35px;
+				margin-bottom: 30px;
+			  font-size: 30px;
+			  line-height: 42px;
 			}
+				.features-name::after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					display: block;
+					width: 20px;
+					height: 20px;
+					margin-left: -10px;
+					background-color: #ffffff;
+					-webkit-transform: rotate(45deg);
+									transform: rotate(45deg);
+				}
 	.index-content{
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -165,11 +177,13 @@ main a{
 				}
 	.btn{
 		display: inline-block;
+		margin-top: 5px;
+		margin-right: 5px;
 		padding: 10px 33px;
 		font-weight: 700;
 		font-size: 14px;
 		line-height: 24px;
-		font-family: "PT Sans Narrow", "Arial", sans-serif;
+		font-family: "PTSansNarrowBold", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 		vertical-align: top;
 		text-align: center;
 		color: #fff;
@@ -198,21 +212,13 @@ main a{
 		background-color: #ccc;
 	  border: 7px solid #fff;
 		margin-bottom: 20px;
+	}
+		.gallery-content img{
+			display: block;
 		}
-			.gallery-content img{
-				display: block;
-			}
-			.btn-box{
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-box-pack: justify;
-				    -ms-flex-pack: justify;
-				        justify-content: space-between;
-			}
-				.btn-box .btn{
-					width: 46%;
-				}
+	.gallery .btn{
+		padding: 10px 50px;
+	}
 	.appointment-form input {
 				  float: left;
 				  width: 106px;
@@ -242,8 +248,7 @@ main a{
 
 .main-footer{
 	margin-top: 65px;
-	padding-top: 60px;
-	padding-bottom: 40px;
+	padding: 60px 0 40px;
 	color: #fff;
 	background: #252525 url("../img/pattern-black.jpg");
 }
@@ -260,58 +265,86 @@ main a{
 	justify-content: space-between;
 }
 	.footer-contacts{
-		width: 33%;
+		width: 35%;
 	}
-	.footer-social{
-		width: 33%;
-		text-align: center;
-	}
+		.footer-social,
+		.footer-copyright{
+			width: 30%;
+			text-align: center;
+		}
 		.social-btn {
 			display: inline-block;
 			width: 43px;
 			height: 43px;
-			margin: 0 2px;
+			margin: 2px 2px;
 			font-size: 0;
 			vertical-align: top;
 			text-decoration: none;
 			background: #000000 url("../img/sprite.png") no-repeat center;
-			-webkit-transition:-webkit-filter 1s;
-			transition:-webkit-filter 1s;
-			transition:filter 1s;
-			transition: filter 1s, -webkit-filter 1s;
+			-webkit-transition:-webkit-filter 2s;
+			transition:-webkit-filter 2s;
+			transition:filter 2s;
+			transition: filter 2s, -webkit-filter 2s;
 		}
 			.social-btn:hover {
 				-webkit-filter: invert(100%);
 				        filter: invert(100%);
 			}
 				.social-btn-vk{
-					background-position: -10px -201px;
+					background-position: -2px -187px;
 				}
 				.social-btn-fb{
-					background-position: -10px -118px;
+					background-position: 5px -107px;
 				}
 				.social-btn-inst{
-					background-position: -10px -160px;
+					background-position: 2px -148px;
 				}
 			.sprite-social-icons {
 			    width: 58px;
 			    height: 44px;
 			    background-position: -10px -237px;
 			}
-	.footer-copyright{
-		width: 33%;
-		text-align: center;
-	}
-		.footer-copyright .btn:hover {
-			color: #000000;
-			background-color: #ffffff;
+		.footer-copyright p{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-around;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+							-ms-flex-wrap: wrap;
+							    flex-wrap: wrap;
 		}
+			.footer-copyright .btn{
+				border: none;
+			}
+			.footer-copyright .btn:hover {
+				color: #000;
+				background-color: #fff;
+			}
 
-
-
-
-
-
+/* --------------- inner-pages ---------*/
+.inner-page{
+	background: #f8f5f2 url("../img/bg-pattern.jpg") repeat center top;
+	color: #000;
+}
+			/* --------------- price ---------*/
+			.about-and-price-list{
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+			}
+				.about{
+					width: 41%;
+				}
+				.price-list{
+					width: 49%;
+				}
 /* --------------- item ---------*/
 .description{
 	display: -webkit-box;
@@ -327,21 +360,7 @@ main a{
 	.description-text{
 		width: 41%;
 	}
-/* --------------- price ---------*/
-.about-and-price-list{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-}
-	.about{
-		width: 41%;
-	}
-	.price-list{
-		width: 49%;
-	}
+
 	/* --------------- shop ---------*/
 .catalog{
 display: -webkit-box;
