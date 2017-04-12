@@ -41,43 +41,63 @@
             <fieldset>
               <legend>ПРОИЗВОДИТЕЛИ</legend>
               <ul>
-                <li><input type="checkbox" name="brand" id="brand1">
-                  <label for="brand1">Baxter of California</label></li>
-                <li><input type="checkbox" name="brand" id="brand2">
-                  <label for="brand2">Mr Natty</label></li>
-                <li><input type="checkbox" name="brand" id="brand3">
-                  <label for="brand3">Suavecito</label></li>
-                <li><input type="checkbox" name="brand" id="brand4">
-                  <label for="brand4">Malin+Goetz</label></li>
-                <li><input type="checkbox" name="brand" id="brand5">
-                  <label for="brand5">Murray’s</label></li>
-                <li><input type="checkbox" name="brand" id="brand6">
-                  <label for="brand6">American Crew</label></li>
+                <li><label class="brand-chexkbox">
+                  <input type="checkbox" name="brand">
+                  <span class="checkbox-indicator"></span>
+                  Baxter of California</label></li>
+                <li><label class="brand-chexkbox">
+                  <input type="checkbox" name="brand">
+                  <span class="checkbox-indicator"></span>
+                  Mr Natty</label></li>
+                <li><label class="brand-chexkbox">
+                  <input type="checkbox" name="brand">
+                  <span class="checkbox-indicator"></span>
+                  Suavecito</label></li>
+                <li><label class="brand-chexkbox">
+                  <input type="checkbox" name="brand">
+                  <span class="checkbox-indicator"></span>
+                  Malin+Goetz</label></li>
+                <li><label class="brand-chexkbox">
+                  <input type="checkbox" name="brand">
+                  <span class="checkbox-indicator"></span>
+                  Murray’s</label></li>
+                <li><label class="brand-chexkbox">
+                  <input type="checkbox" name="brand">
+                  <span class="checkbox-indicator"></span>
+                  American Crew</label></li>
               </ul>
             </fieldset>
             <fieldset>
               <legend>ГРУППЫ ТОВАРОВ:</legend>
               <ul>
-                <li><input type="radio" name="goods1" id="goods1">
-                <label for="goods1">Бритвенные принадлежности</label></li>
-                <li><input type="radio" name="goods2" id="goods2">
-                <label for="goods2">Средства для ухода</label></li>
-                <li><input type="radio" name="goods3" id="goods3">
-                <label for="goods3">Аксессуары</label></li>
+                <li><label class="goods-radio">
+                  <input type="radio" name="goods">
+                  <span class="radio-indicator"></span>
+                  Бритвенные принадлежности</label></li>
+                <li><label class="goods-radio">
+                  <input type="radio" name="goods">
+                  <span class="radio-indicator"></span>
+                  Средства для ухода</label></li>
+                <li><label class="goods-radio">
+                  <input type="radio" name="goods">
+                  <span class="radio-indicator"></span>
+                  Аксессуары</label></li>
               </ul>
             </fieldset>
             <button type="submit" class="btn">Показать</button>
           </form>
         </aside>
-        <section class="catalog-item">
+        <section class="catalog-items">
           <article class="item">
             <a href="item.html"><img src="img/item-1.jpg" alt=""></a>
-            <h1><a href="item.html">
-              <span class="item-category">Набор для путешествий</span>
-              <span class="item-title">«Baxter of California»</span></a></h1>
-            <div class="price-block">
-              <span class="price">2 900 РУБ.</span>
-              <a href="#" class="btn">Купить</a></div>
+            <div class="item-description">
+              <h1><a href="item.html">
+                <span class="item-category">Набор для путешествий</span>
+                <span class="item-title">«Baxter of California»</span></a></h1>
+              <div class="price-block">
+                <span class="price">2 900 РУБ.</span>
+                <a href="#" class="btn">Купить</a></div>
+            </div>
           </article>
           <article class="item">
             <a href="item.html"><img src="img/item-2.jpg" alt=""></a>
@@ -169,7 +189,9 @@
               <span class="price">3 900 РУБ.</span>
               <a href="#" class="btn">Купить</a></div>
           </article>
+
         </section>
+
       </div>
       <div class="paginator">
         <a href="#">1</a>
@@ -202,12 +224,12 @@
       </section>
     </div>
   </footer>
-  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <!--<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
   <script type="text/javascript" src="js/jquery.pixlayout.0.9.7.js"></script>
   <script type="text/javascript">
   	$(function(){
   		$.pixlayout({clip: true, src: "maketshop.jpg", show:true, center:true, top:0, left:0, pervious: false});
   });
-</script>
+</script>-->
 </body>
 </html>
